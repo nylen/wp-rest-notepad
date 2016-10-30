@@ -1,0 +1,7 @@
+<FilesMatch ".git">
+Require all denied
+</FilesMatch>
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?note_id=$1
