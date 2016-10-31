@@ -50,9 +50,10 @@ function is_valid_note_id( $note_id ) {
 function render_note( $note ) {
 	$action      = ( $note['exists'] ? 'save' : 'create' );
 	$action_text = ( $note['exists'] ? 'Save note' : 'Create note' );
+	$is_404      = ( isset( $note['is_404'] ) && $note['is_404'] );
 	$readonly    = '';
 
-	if ( isset( $note['is_404'] ) && $note['is_404'] ) {
+	if ( $is_404 ) {
 		$readonly = 'readonly onfocus="this.blur()"';
 		http_response_code( 404 );
 	}
@@ -89,8 +90,8 @@ function render_note( $note ) {
 
 HTML;
 
-	if ( ! isset( $note['is_404'] ) || ! $note['is_404'] ) {
-	echo <<<HTML
+	if ( ! $is_404 ) {
+		echo <<<HTML
 				<input type="hidden" name="note_id" value="$note[id]">
 				<input type="hidden" name="action" value="$action">
 				<input type="submit" id="submit" value="$action_text">
@@ -98,8 +99,13 @@ HTML;
 HTML;
 	}
 
-	echo <<<HTML
+	if ( $action !== 'create' || $is_404 ) {
+		echo <<<HTML
 				<a id="add-new" href=".">Add a new note</a>
+
+HTML;
+	}
+		echo <<<HTML
 			</div>
 		</form>
 	</body>
