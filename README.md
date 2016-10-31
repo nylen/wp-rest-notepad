@@ -16,8 +16,8 @@ Install PHP on your server and clone this repo.
 Have a WordPress (self-hosted or WordPress.com) site handy that's running the
 latest version of the WP REST API.
 
-For self-hosed WordPress, WP 4.7 beta 2 and higher will definitely work; others
-may or may not work.  You'll need to install the
+For self-hosted WordPress, WP 4.7 beta 2 and higher will definitely work;
+others may or may not work.  You'll need to install the
 [Application Passwords plugin](https://github.com/georgestephanis/application-passwords)
 and generate a
 [basic authentication header](https://en.wikipedia.org/wiki/Basic_access_authentication)
@@ -34,8 +34,8 @@ configuration is up to you for the time being.
 
 ## Enhancements
 
-I have intentionally kept this app very simple.  There are a few enhancements
-for which I would definitely welcome PRs:
+I have intentionally kept this app very simple.  However, there are a few
+enhancements for which I would definitely welcome PRs:
 
 - [OAuth1](https://github.com/WP-API/OAuth1) support for self-hosted sites.
 - Configuration instructions/files for nginx.
