@@ -82,19 +82,22 @@ function render_note( $note ) {
 				rows="3"
 				$readonly
 			>$note[content]</textarea>
+			<div id="controls">
 
 HTML;
 
 	if ( ! isset( $note['is_404'] ) || ! $note['is_404'] ) {
 	echo <<<HTML
-			<input type="hidden" name="note_id" value="$note[id]">
-			<input type="hidden" name="action" value="$action">
-			<input type="submit" id="submit" value="$action_text">
+				<input type="hidden" name="note_id" value="$note[id]">
+				<input type="hidden" name="action" value="$action">
+				<input type="submit" id="submit" value="$action_text">
 
 HTML;
 	}
 
 	echo <<<HTML
+				<a id="add-new" href=".">Add a new note</a>
+			</div>
 		</form>
 	</body>
 </html>

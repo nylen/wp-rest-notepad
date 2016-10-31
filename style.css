@@ -9,6 +9,14 @@ body, input, textarea {
 	color: #333;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 input[readonly], textarea[readonly] {
 	cursor: default;
 	user-select: none;
@@ -28,7 +36,7 @@ form {
 	border-bottom: 1px solid #bbb;
 }
 
-#title, #content, #submit {
+#title, #content, #controls {
 	margin: 10px;
 }
 
@@ -39,4 +47,10 @@ form {
 
 #content {
 	height: 300px;
+}
+
+#add-new {
+	font-size: 14px;
+	color: #22d;
+	margin-left: 15px;
 }
