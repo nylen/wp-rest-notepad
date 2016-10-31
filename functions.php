@@ -57,10 +57,13 @@ function render_note( $note ) {
 		http_response_code( 404 );
 	}
 
+	header( 'Content-Type: text/html; charset=UTF-8' );
+
 	echo <<<HTML
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title>WP REST Notepad</title>
 		<link rel="stylesheet" href="style.css">
